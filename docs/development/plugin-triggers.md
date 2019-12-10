@@ -820,6 +820,20 @@ set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
 # TODO
 ```
 
+### `post-container-create`
+
+- Description: This trigger should be used to do stuff to containers after they are created but before they are started. They are explicitely for commands that may involve network traffic, and _not_ for commands that are self-contained, such as chown or tar.
+- Invoked by: `dokku run`, `dokku ps:rebuild`, `dokku deploy`
+- Arguments "$CONTAINER_ID" "app|service" "$APP|$SERVICE" "$PHASE"
+
+```shell
+#!/usr/bin/env bash
+
+set -eo pipefail; [[ $DOKKU_TRACE ]] && set -x
+
+# TODO
+```
+
 ### `post-create`
 
 - Description: Can be used to run commands after an app is created.
