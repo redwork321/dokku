@@ -1,4 +1,7 @@
-/var/log/services/* {
+/var/log/services/dokku-restore
+/var/log/services/nginx
+/var/log/services/rsyslog
+{
   daily
   missingok
   rotate 7
